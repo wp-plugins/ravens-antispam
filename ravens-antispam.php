@@ -1,7 +1,7 @@
 <?php
 /*
 	Plugin Name: Raven's Antispam
-	Plugin URI: http://kahi.cz/blog/ravens-antispam-for-wordpress
+	Plugin URI: http://kahi.cz/wordpress/ravens-antispam-plugin/
 	Description: Smart antispam based on a JavaScript method. No questions, great efficiency and maximal accessibility - everything you can need.
 	Author: Peter "Kahi" Kahoun
 	Author URI: http://kahi.cz

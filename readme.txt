@@ -14,4 +14,4 @@ Raven's antispam is a Wordpress plugin, powerful and invisible fighter against c
 
 Visitors with enabled JavaScript (99%+) see nothing – no annoying questions, no captcha, nothing. (Users with disabled JS see an additional text-field and a word that must be rewritten into textfield.)
 
-Note: this plugin is not able to check your trackbacks - to handle trackback spam, it's necessary to use some other solution. [See my recommendations](http://kahi.cz/wordpress/ravens-antispam-plugin/)
+Note: this plugin is not able to check your trackbacks - to handle trackback spam, it's necessary to use some other solution. [See my recommendations](http://kahi.cz/wordpress/ravens-antispam-plugin/).
