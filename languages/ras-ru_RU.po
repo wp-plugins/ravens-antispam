@@ -1,67 +1,57 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: kca (cs_CZ)\n"
+"Project-Id-Version: Raven's antispam\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-10-15 23:58+0100\n"
-"PO-Revision-Date: 2008-10-15 23:58+0100\n"
-"Last-Translator: Peter Kahoun <kahi.cz@gmail.com>\n"
-"Language-Team: Kahi <kahi@kahi.cz>\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ptath <ptath@ptath.ru>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Czech\n"
-"X-Poedit-Country: CZECH REPUBLIC\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-Basepath: .\n"
-"X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: Russia\n"
 
 #: ../ravens-antispam.php:56
 msgid "Please type"
-msgstr "Prosím opište"
+msgstr "Пожалуйста введите"
 
 #: ../ravens-antispam.php:162
 msgid "You didn't answer the antispam question, your comment <strong>was not saved</strong>. Press \"Back\" and answer the question. <br />Just to be sure that your message won't be lost - copy it now to the clipboard."
-msgstr "Nevyplnili jste antispamové políčko, váš komentář <strong>nebyl uložen</strong>. Stiskněte tlačítko \"Zpět\" a vyplňte políčko. <br />Jen pro jistotu, že o svůj text nepřijdete - si ho raději zkopírujte do schránky."
+msgstr "Вы не ответили на вопрос антиспам-сервиса, комментарий <strong>всё ещё не сохранен</strong>. Нажмите \"Назад\" в браузере и ответьте на вопрос. <br />Совет — чтобы случайно не потерять сообщение, скопируйте его в буфер обмена."
 
 #: ../ravens-antispam.php:163
 msgid "You didn't answer the antispam question correctly, your comment <strong>was not saved</strong>. Press \"Back\" and answer the question better. <br />Just to be sure that your message won't be lost - copy it now to the clipboard."
-msgstr "Antispamové políčko jste nevyplnili správně, váš komentář <strong>nebyl uložen</strong>. Stiskněte tlačítko \"Zpět\" a vyplňte políčko lépe. <br />Jen pro jistotu, že o svůj text nepřijdete - si ho raději zkopírujte do schránky."
+msgstr "Вы не ответили на вопрос антиспам-сервиса, комментарий <strong>всё ещё не сохранен</strong>. Нажмите \"Назад\" в браузере и ответьте на вопрос. <br />Совет — чтобы случайно не потерять сообщение, скопируйте его в буфер обмена."
 
 #: ../ravens-antispam.php:261
 msgid "Display antispam question anyway?"
-msgstr "Zobrazovat antispamovou otázku vždy?"
+msgstr "Показывать антиспам-вопрос в любом случае?"
 
 #: ../ravens-antispam.php:264
 msgid "If you don't want to use the default template code, you can specify here your own."
-msgstr "Pokud nechcete používat výchozí kód šablony, můžete si zde určit svůj vlastní."
+msgstr "Можно назначить собственный код шаблона здесь."
 
 #: ../ravens-antispam.php:268
 msgid "use default template code"
-msgstr "použít výchozí kód šablony"
+msgstr "использовать стандартный код"
 
 #: ../ravens-antispam.php:269
 msgid "use own template code"
-msgstr "použít vlastní kód šablony"
+msgstr "использовать собственный код"
 
 #: ../ravens-antispam.php:274
 msgid "Remember variables <code>%name%</code> and <code>%answer%</code>."
-msgstr "Pamatujte na proměnné <code>%name%</code> a <code>%answer%</code>."
+msgstr "Запомнить переменные <code>%name%</code> и <code>%answer%</code>."
 
 #: ../ravens-antispam.php:275
 msgid "Reset the code to default"
-msgstr "Vrátit výchozí kód"
+msgstr "Восстановить стандартные настройки."
 
 #: ../ravens-antispam.php:306
 msgid "Save Changes"
-msgstr "Uložit změny"
+msgstr "Сохранить изменения"
 
-#~ msgid ""
-#~ "<p><label for=\"%name%\">Please type \"%answer%\": </label><input type="
-#~ "\"text\" name=\"%name%\" id=\"%name%\" /></p>"
-#~ msgstr ""
-#~ "<p><label for=\"%name%\">Prosím opište \"%answer%\": </label><input type="
-#~ "\"text\" name=\"%name%\" id=\"%name%\" /></p>"
 #~ msgid ""
 #~ "Warning! %1$s folder in %2$s is not writable! Set it's permissions to 775."
 #~ msgstr ""

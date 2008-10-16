@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kca (cs_CZ)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-26 22:38+0100\n"
-"PO-Revision-Date: 2008-08-26 22:38+0100\n"
+"POT-Creation-Date: 2008-10-15 23:58+0100\n"
+"PO-Revision-Date: 2008-10-15 23:58+0100\n"
 "Last-Translator: Peter Kahoun <kahi.cz@gmail.com>\n"
 "Language-Team: Kahi <kahi@kahi.cz>\n"
 "MIME-Version: 1.0\n"
@@ -16,39 +16,43 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../ravens-antispam.php:160
+#: ../ravens-antispam.php:56
+msgid "Please type"
+msgstr ""
+
+#: ../ravens-antispam.php:162
 msgid "You didn't answer the antispam question, your comment <strong>was not saved</strong>. Press \"Back\" and answer the question. <br />Just to be sure that your message won't be lost - copy it now to the clipboard."
 msgstr ""
 
-#: ../ravens-antispam.php:161
+#: ../ravens-antispam.php:163
 msgid "You didn't answer the antispam question correctly, your comment <strong>was not saved</strong>. Press \"Back\" and answer the question better. <br />Just to be sure that your message won't be lost - copy it now to the clipboard."
 msgstr ""
 
-#: ../ravens-antispam.php:259
+#: ../ravens-antispam.php:261
 msgid "Display antispam question anyway?"
 msgstr ""
 
-#: ../ravens-antispam.php:262
+#: ../ravens-antispam.php:264
 msgid "If you don't want to use the default template code, you can specify here your own."
 msgstr ""
 
-#: ../ravens-antispam.php:266
+#: ../ravens-antispam.php:268
 msgid "use default template code"
 msgstr ""
 
-#: ../ravens-antispam.php:267
+#: ../ravens-antispam.php:269
 msgid "use own template code"
 msgstr ""
 
-#: ../ravens-antispam.php:272
+#: ../ravens-antispam.php:274
 msgid "Remember variables <code>%name%</code> and <code>%answer%</code>."
 msgstr ""
 
-#: ../ravens-antispam.php:273
+#: ../ravens-antispam.php:275
 msgid "Reset the code to default"
 msgstr ""
 
-#: ../ravens-antispam.php:304
+#: ../ravens-antispam.php:306
 msgid "Save Changes"
 msgstr ""
 

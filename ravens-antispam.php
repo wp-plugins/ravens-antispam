@@ -5,7 +5,7 @@
 	Description: Smart antispam based on a JavaScript method. No questions, great efficiency and maximal accessibility - everything you can need.
 	Author: Peter "Kahi" Kahoun
 	Author URI: http://kahi.cz
-	Version: 2.0
+	Version: 2.0.1
 */
 
 
@@ -22,7 +22,7 @@ class RavensAntispam {
 		$name,
 
 		$temp_template_code,
-		$default_template_code = '<p><label for="%name%">Please type "%answer%": </label><input type="text" name="%name%" id="%name%" /></p>',
+		$default_template_code,
 		$unique_string,
 
 		$abbr = 'ras',
@@ -52,6 +52,8 @@ class RavensAntispam {
 
 		// enable localization
 		load_plugin_textdomain($this->abbr, 'wp-content/plugins/' . $dir_name . '/languages/');
+		
+		$this->default_template_code = '<p><label for="%name%">'. __('Please type', $this->abbr) . '"%answer%": </label><input type="text" name="%name%" id="%name%" /></p>';
 
 	}
 
