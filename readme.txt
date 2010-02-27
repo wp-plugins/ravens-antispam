@@ -1,9 +1,9 @@
 === Raven's Antispam ===
-Contributors: Peter "Kahi" Kahoun
+Contributors: kahi
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=kahi%40kahi%2ecz&item_name=Kahi&no_shipping=1&cn=Your%20note%2e%2e%2e&tax=0&currency_code=EUR&lc=CZ&bn=PP%2dDonationsBF&charset=UTF%2d8
 Tags: comments, spam, antispam
 Requires at least: 2.0.3
-Tested up to: 2.6
+Tested up to: 2.9
 Stable tag: trunk
 
 Powerful and invisible fighter against comment spam.
