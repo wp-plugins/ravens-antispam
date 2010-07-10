@@ -5,7 +5,7 @@
 	Description: Smart antispam based on a JavaScript method. No questions, great efficiency and maximal accessibility - everything you can need.
 	Author: Peter Kahoun
 	Author URI: http://kahi.cz
-	Version: 2.0.1
+	Version: 2.1
 */
 
 
@@ -53,7 +53,9 @@ class RavensAntispam {
 		// enable localization
 		load_plugin_textdomain($this->abbr, 'wp-content/plugins/' . $dir_name . '/languages/');
 		
-		$this->default_template_code = '<p><label for="%name%">'. __('Please type', $this->abbr) . '"%answer%": </label><input type="text" name="%name%" id="%name%" /></p>';
+		$this->default_template_code = '<p><label for="%name%g">'. __('Please type', $this->abbr) . ' "%answer%": </label><input type="text" name="%name%" id="%name%g" /></p>
+			<p><label for="%name2%e">'. __('Leave this field empty please', $this->abbr) . ': </label><input type="text" name="%name2%" id="%name2%e" /></p>
+			';
 
 	}
 
@@ -65,6 +67,8 @@ class RavensAntispam {
 
 		$this->name = $this->GenerateName();
 		$this->answer = $this->GenerateAnswer();
+		$this->name2 = $this->GenerateName2();
+		$this->answer2 = $this->GenerateAnswer2();
 
 
 		// split correct answer into two parts - because of more complicated parsing for spambots
@@ -103,8 +107,8 @@ class RavensAntispam {
 
 		?>
 
+		<script type="text/javascript">/* <![CDATA[ */ document.write('<div><input type="hidden" name="<?php echo $this->name; ?>" value="<?php echo $answer_array[0]; ?>' + '<?php echo $answer_array[1]; ?>" \/><input type="hidden" name="%name2%" value="'+'"><\/div>'); /* ]]> */</script>
 		<noscript><?php echo $this->GetTemplateCode(); ?></noscript>
-		<script type="text/javascript">/* <![CDATA[ */ document.write('<div><input type="hidden" name="<?php echo $this->name; ?>" value="<?php echo $answer_array[0]; ?>' + '<?php echo $answer_array[1]; ?>" \/><\/div>'); /* ]]> */</script>
 
 		<?php
 
@@ -131,14 +135,13 @@ class RavensAntispam {
 
 			// make the final template code
 			$template_code = str_replace(
-				array('%name%', '%answer%'),
-				array($this->name, $this->answer),
+				array('%name%', '%answer%', '%name2%', '%answer2%'),
+				array($this->name, $this->answer, $this->name2, $this->answer2),
 				$template_code);
 
 
 			// cache the code for this instance
 			$this->temp_template_code = $template_code;
-
 
 			return $template_code;
 
@@ -155,13 +158,16 @@ class RavensAntispam {
 
 		$this->name = $this->GenerateName();
 		$this->answer = $this->GenerateAnswer();
+		$this->name2 = $this->GenerateName2();
+		$this->answer2 = $this->GenerateAnswer2();
 		$this->answer_yesterday = $this->GenerateAnswer('yesterday');
 
 		$user_answer = trim($_POST[$this->name]);
+		$user_answer2 = trim($_POST[$this->name2]);
 
 		$errors['empty'] = __('You didn\'t answer the antispam question, your comment <strong>was not saved</strong>. Press "Back" and answer the question. <br />Just to be sure that your message won\'t be lost - copy it now to the clipboard.', $this->abbr);
 		$errors['wrong'] = __('You didn\'t answer the antispam question correctly, your comment <strong>was not saved</strong>. Press "Back" and answer the question better. <br />Just to be sure that your message won\'t be lost - copy it now to the clipboard.', $this->abbr);
-
+				
 		// not a trackback
 		if ( $comment_type === '' AND !$user_ID) {
 
@@ -173,9 +179,12 @@ class RavensAntispam {
 			}
 
 			// filled wrong
-			elseif ( ( $user_answer != $this->answer ) AND !( date('G') == 0 AND $user_answer == $this->answer_yesterday ) ) {
-				$this->Flashback ($post_ID);
-				wp_die($errors['wrong'] .'<br /><br /><em>'. $comment_content .'</em>');
+			elseif (($user_answer2 != $this->answer2) 
+				OR (( $user_answer != $this->answer ) AND !( date('G') == 0 AND $user_answer == $this->answer_yesterday )) ) {
+				
+					$this->Flashback ($post_ID);
+					wp_die($errors['wrong'] .'<br /><br /><em>'. $comment_content .'</em>');					
+				
 			}
 
 		}
@@ -215,6 +224,13 @@ class RavensAntispam {
 		return substr(md5($mix),3,6);
 
 	}
+	
+	// 
+	function GenerateAnswer2 () {
+
+		return '';
+
+	}
 
 
 
@@ -222,7 +238,16 @@ class RavensAntispam {
 	function GenerateName () {
 
 		$mix = 'raven?'.$this->unique_string;
-		return 'websiteurl'. substr(md5($mix),8,3);
+		return 'url'. substr(md5($mix),16,4);
+		// return 'web_site_url';
+
+	}
+
+	// Every installation carries different input-name
+	function GenerateName2 () {
+
+		$mix = 'raven?'.$this->unique_string;
+		return substr(md5($mix),0,6);
 
 	}
 
@@ -293,7 +318,7 @@ class RavensAntispam {
 					jQuery('.ras_own_template_code').change();
 
 					jQuery('#ras_reset_button').click(function () {
-						jQuery('#i_ras_template_code').val('<?php echo $this->default_template_code; ?>');
+						jQuery('#i_ras_template_code').val('<?php echo str_replace("\n", '', $this->default_template_code); ?>');
 					});
 
 				});
